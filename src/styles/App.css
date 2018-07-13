@@ -1,30 +1,38 @@
+@import url(./base/normalize.css);
+body {
+  background-color: #5498BB; }
+
+h1, h2, h3, h4, h5 {
+  margin: 0; }
+
+.Dropdown__container {
+  padding: 30px 0;
+  background-color: #e41f25;
+  text-align: center; }
+
+.Dropdown__menu {
+  background-color: white;
+  min-width: 150px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: none; }
+
 @keyframes spin {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
-.load-spinner {
+
+.Spinner {
   margin: 0 auto;
   margin-top: 10px;
   text-align: center; }
-  .load-spinner #pokemon-spinner {
+  .Spinner--loading {
     animation-name: spin;
     animation-duration: 3s;
     animation-iteration-count: infinite; }
-
-.dropdown-menu-container {
-  padding: 30px 0;
-  background-color: #e41f25;
-  text-align: center; }
-  .dropdown-menu-container #dropdown-menu {
-    background-color: white;
-    min-width: 150px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: none; }
-
-body {
-  background-color: #5498BB; }
+  .Spinner__image {
+    vertical-align: middle; }
 
 .App {
   border: 3px solid #5D686B;
@@ -32,44 +40,50 @@ body {
   max-width: 600px;
   margin: 0 auto;
   background-color: white; }
-  .App .pokemon-name {
-    text-align: center;
-    color: white;
-    font-size: 22px;
-    font-weight: 800;
-    padding: 20px; }
 
-.bio {
+.Bio__name {
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+  padding: 20px; }
+
+.Bio__info-container {
   margin: 30px 0px; }
-  .bio .img-column {
-    vertical-align: top;
-    text-align: center;
-    box-sizing: border-box;
-    width: 30%;
-    display: inline-block; }
-  .bio .text-column {
-    width: 70%;
-    box-sizing: border-box;
-    display: inline-block; }
-    .bio .text-column .physical-stats {
-      display: flex;
-      text-align: center; }
-      .bio .text-column .physical-stats .physical-stat {
-        flex: 1; }
-        .bio .text-column .physical-stats .physical-stat .main {
-          font-weight: 600;
-          font-size: 16px; }
-        .bio .text-column .physical-stats .physical-stat .sub {
-          font-weight: 400;
-          font-size: 12px; }
-        .bio .text-column .physical-stats .physical-stat:nth-child(2) {
-          border-right: 1px solid black;
-          border-left: 1px solid black; }
-    .bio .text-column .fun-fact {
-      margin-top: 20px;
-      padding-right: 25px; }
 
-.main-type {
+.Bio__image-container {
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+  width: 30%;
+  display: inline-block; }
+
+.Bio__text-container {
+  width: 70%;
+  box-sizing: border-box;
+  display: inline-block; }
+
+.Bio__stats {
+  display: flex;
+  text-align: center; }
+
+.Bio__fun-fact {
+  margin-top: 20px;
+  padding-right: 25px; }
+
+.BioStat {
+  flex: 1; }
+  .BioStat__value {
+    font-weight: 600;
+    font-size: 16px; }
+  .BioStat__label {
+    font-weight: 400;
+    font-size: 12px; }
+  .BioStat:nth-child(2) {
+    border-right: 1px solid black;
+    border-left: 1px solid black; }
+
+.MainType {
   margin-bottom: 10px;
   max-width: 400px;
   min-width: 95px;
@@ -77,78 +91,97 @@ body {
   display: inline-block;
   border-radius: 30px 0px 0px 30px;
   color: white; }
-  @media only screen and (min-width: 450px) {
-    .main-type {
-      min-width: 150px; } }
-  .main-type .type-name {
+  .MainType__value {
     font-size: 16px;
     font-weight: 800; }
-  .main-type .type-label {
+  .MainType__label {
     font-size: 12px; }
+  @media only screen and (min-width: 450px) {
+    .MainType {
+      min-width: 150px; } }
 
-.stats-data {
-  margin: 0 auto; }
-  .stats-data .types-column {
-    display: inline-block;
-    width: 40%;
-    text-align: right;
-    box-sizing: border-box;
-    vertical-align: top; }
-    .stats-data .types-column .type-relation-set {
-      margin: 10px 10px 0px 0px; }
-      .stats-data .types-column .type-relation-set .element {
-        display: inline-block;
-        margin: 0px 5px;
-        width: 42px;
-        padding: 10px 0px;
-        font-size: 8px;
-        text-align: center;
-        color: white; }
-        @media only screen and (min-width: 450px) {
-          .stats-data .types-column .type-relation-set .element {
-            width: 42px;
-            padding: 10px 0px;
-            font-size: 10px; } }
-      .stats-data .types-column .type-relation-set .label {
-        margin: 5px 0px; }
-  .stats-data .chart-column {
-    width: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    border: 3px solid;
-    border-right: 0px; }
-    @media only screen and (min-width: 450px) {
-      .stats-data .chart-column {
-        width: 60%; } }
+.TypeRelations {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+  box-sizing: border-box;
+  vertical-align: top; }
 
-.evo-chain-container .evo-chain-section-title {
+.TypeRelation__set {
+  margin: 10px 10px 0px 0px; }
+
+.TypeRelation__element {
+  display: inline-block;
+  margin: 0px 5px;
+  width: 42px;
+  padding: 10px 0px;
+  font-size: 8px;
+  text-align: center;
+  color: white; }
+  @media only screen and (min-width: 450px) {
+    .TypeRelation__element {
+      width: 42px;
+      padding: 10px 0px;
+      font-size: 10px; } }
+
+.TypeRelation__label {
+  margin: 5px 0px; }
+
+.Chart__container {
+  width: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  border: 3px solid;
+  border-right: 0px; }
+  @media only screen and (min-width: 450px) {
+    .Chart__container {
+      width: 60%; } }
+
+.Chart__chart {
+  margin-top: 10px; }
+
+.EvoChain__title-container {
+  position: relative; }
+
+.EvoChain__title {
   margin: 0 auto;
+  margin-top: 20px;
   text-align: center;
   width: 80%;
   font-size: 16px;
+  padding: 10px 0px;
   position: relative;
-  top: 20px;
-  padding: 10px 0px; }
-.evo-chain-container .evo-chain-thin-line {
-  height: 2px; }
-.evo-chain-container .evo-chain {
+  z-index: 2; }
+
+.EvoChain__decoration-line {
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; }
+
+.EvoChain__tree {
   text-align: center;
   margin-top: 30px; }
-  .evo-chain-container .evo-chain .poke-img {
-    display: inline-block; }
-  .evo-chain-container .evo-chain .poke-req {
-    display: inline-block;
-    vertical-align: top; }
-    .evo-chain-container .evo-chain .poke-req .evolve-level {
-      font-weight: 800;
-      padding-top: 40px; }
-      .evo-chain-container .evo-chain .poke-req .evolve-level .lvl-label {
-        font-size: 10px; }
-      .evo-chain-container .evo-chain .poke-req .evolve-level .evolved-label {
-        font-size: 16px; }
-    .evo-chain-container .evo-chain .poke-req .req-sprite {
-      padding-top: 40px; }
-    .evo-chain-container .evo-chain .poke-req .req-s-sprite {
-      padding-top: 10px; }
 
-/*# sourceMappingURL=App.css.map */
+.EvoChain__req {
+  display: inline-block;
+  vertical-align: top; }
+  .EvoChain__req__level {
+    font-weight: 800;
+    padding-top: 40px; }
+  .EvoChain__req__level-label {
+    font-size: 10px; }
+  .EvoChain__req__evolved-label {
+    font-size: 16px; }
+  .EvoChain__req__sprite {
+    padding-top: 40px; }
+  .EvoChain__req__s-sprite {
+    padding-top: 10px; }
+
+.PokeImage {
+  display: inline-block; }
+
+.Stats {
+  margin: 0 auto; }

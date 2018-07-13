@@ -8,7 +8,7 @@ export default (props)=>{
   function convertHeightToFeet(meters){
     const raw_height = meters*.1*3.28084;
     var feet = Math.floor(raw_height);
-    const inches = Math.round(raw_height%1 * 12);
+    const inches = Math.round(raw_height % 1 * 12);
     if(inches === 12){
       feet+=1;
       return feet+"'"
@@ -43,19 +43,22 @@ export default (props)=>{
     return flavorText;
   }
   return(
-    <div className="bio">
-      <div className="img-column">
-        <PokeImage idNum={props.generalData.id} name={props.generalData.name}/>
-        <div className="poke-num">{addZerosToId(props.generalData.id)}</div>
-      </div>
-      <div className="text-column">
-        <div className="physical-stats">
-          <BioStat main={props.bioData.genera[2].genus.toUpperCase()} sub="SPECIES"/>
-          <BioStat main={convertHeightToFeet(props.generalData.height)} sub="HEIGHT"/>
-          <BioStat main={convertWeightToLbs(props.generalData.weight)} sub="WEIGHT"/>
+    <div className="Bio">
+      <h1 className="Bio__name" style={props.style}>{(props.generalData.name).toUpperCase()}</h1>
+      <div className="Bio__info-container">
+        <div className="Bio__image-container">
+          <PokeImage idNum={props.generalData.id} name={props.generalData.name}/>
+          <div className="Bio__number">{addZerosToId(props.generalData.id)}</div>
         </div>
-        <div className="fun-fact">
-          {englishFlavorText()}
+        <div className="Bio__text-container">
+          <div className="Bio__stats">
+            <BioStat main={props.bioData.genera[2].genus.toUpperCase()} sub="SPECIES"/>
+            <BioStat main={convertHeightToFeet(props.generalData.height)} sub="HEIGHT"/>
+            <BioStat main={convertWeightToLbs(props.generalData.weight)} sub="WEIGHT"/>
+          </div>
+          <div className="Bio__fun-fact">
+            {englishFlavorText()}
+          </div>
         </div>
       </div>
     </div>

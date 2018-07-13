@@ -1,0 +1,23 @@
+.MainType {
+  margin-bottom: 10px;
+  max-width: 400px;
+  min-width: 95px;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 30px 0px 0px 30px;
+  color: white; }
+  .MainType__value {
+    font-size: 16px;
+    font-weight: 800; }
+  .MainType__label {
+    font-size: 12px; }
+  @media only screen and (min-width: 450px) {
+    .MainType {
+      min-width: 150px; } }
+
+.TypeRelations {
+  display: inline-block;
+  width: 40%;
+  text-align: right;
+  box-sizing: border-box;
+  vertical-align: top; }

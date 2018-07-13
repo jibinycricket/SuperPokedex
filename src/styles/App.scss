@@ -1,0 +1,21 @@
+@import './variables/variables.scss';
+@import './base/normalize.css';
+@import './base/base.scss';
+//Containers
+@import './containers/dropdown.scss';
+@import './containers/pokemonContainer.scss';
+
+//Components
+@import './components/app.scss';
+@import './components/biostats.scss';
+@import './components/biostat.scss';
+@import './components/typerelations.scss';
+@import './components/typerelation.scss';
+@import './components/statchart.scss';
+@import './components/evochain.scss';
+@import './components/pokeimage.scss';
+
+.Stats{
+  margin: 0 auto;
+}
+

@@ -1,0 +1,39 @@
+.EvoChain__title-container {
+  position: relative; }
+
+.EvoChain__title {
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  width: 80%;
+  font-size: 16px;
+  padding: 10px 0px;
+  position: relative;
+  z-index: 2; }
+
+.EvoChain__decoration-line {
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1; }
+
+.EvoChain__tree {
+  text-align: center;
+  margin-top: 30px; }
+
+.EvoChain__req {
+  display: inline-block;
+  vertical-align: top; }
+  .EvoChain__req__level {
+    font-weight: 800;
+    padding-top: 40px; }
+  .EvoChain__req__level-label {
+    font-size: 10px; }
+  .EvoChain__req__evolved-label {
+    font-size: 16px; }
+  .EvoChain__req__sprite {
+    padding-top: 40px; }
+  .EvoChain__req__s-sprite {
+    padding-top: 10px; }

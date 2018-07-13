@@ -1,0 +1,32 @@
+.Bio{
+  &__name{
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+    padding: 20px;
+  }
+  &__info-container{
+    margin: 30px 0px;
+  }
+  &__image-container{
+    vertical-align: top;
+    text-align: center;
+    box-sizing: border-box;
+    width: 30%;
+    display: inline-block;
+  }
+  &__text-container{
+    width: 70%;
+    box-sizing: border-box;
+    display: inline-block;
+  }
+  &__stats{
+    display: flex;
+    text-align: center;
+  }
+  &__fun-fact {
+    margin-top: 20px;
+    padding-right: 25px;
+  }
+}

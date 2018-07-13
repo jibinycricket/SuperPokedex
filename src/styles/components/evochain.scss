@@ -1,0 +1,48 @@
+
+.EvoChain{
+  &__title-container{
+    position: relative;
+  }
+  &__title{
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    width: 80%;
+    font-size: 16px;
+    padding: 10px 0px;
+    position: relative;
+    z-index: 2;
+  }
+  &__decoration-line{
+    height: 2px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  &__tree{
+    text-align: center;
+    margin-top: 30px;
+  }
+  &__req{
+    display: inline-block;
+    vertical-align: top;
+    &__level {
+      font-weight: 800;
+      padding-top: 40px;
+    }
+    &__level-label {
+      font-size: 10px;
+    }
+    &__evolved-label {
+      font-size: 16px;
+    }
+    &__sprite {
+      padding-top: 40px;
+    }
+    &__s-sprite {
+      padding-top: 10px;
+    }
+  }
+}

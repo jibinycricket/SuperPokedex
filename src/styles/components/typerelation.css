@@ -1,0 +1,19 @@
+.TypeRelation__set {
+  margin: 10px 10px 0px 0px; }
+
+.TypeRelation__element {
+  display: inline-block;
+  margin: 0px 5px;
+  width: 42px;
+  padding: 10px 0px;
+  font-size: 8px;
+  text-align: center;
+  color: white; }
+  @media only screen and (min-width: 450px) {
+    .TypeRelation__element {
+      width: 42px;
+      padding: 10px 0px;
+      font-size: 10px; } }
+
+.TypeRelation__label {
+  margin: 5px 0px; }

@@ -1,0 +1,15 @@
+.Chart{
+  &__container{
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-right: 0px;
+    @media only screen and (min-width: 450px) {
+      width: 60%;
+    }
+  }
+  &__chart{
+    margin-top: 10px;
+  }
+}
