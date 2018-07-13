@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchPokeData} from '../actions/index';
@@ -11,6 +12,12 @@ When the dropdown onChange value changes it sends an action to make two API call
 2. To get species data, which is used to get the pokemons evolution tree
 */
 class Dropdown extends Component{
+  static propTypes = {
+    actions: PropTypes.shape({
+      changeSpinnerState: PropTypes.func.isRequired,
+      fetchPokeData: PropTypes.func.isRequired
+    })
+  }
   constructor(props){
     super(props);
     this.state={

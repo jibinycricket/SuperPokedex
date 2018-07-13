@@ -1,10 +1,17 @@
 .BioStat{
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   &__value{
+    display: block;
+    width: 100%;
     font-weight: 600;
     font-size: 16px;
   }
   &__label{
+    display: block;
+    width: 100%;
     font-weight: 400;
     font-size: 12px;
   }

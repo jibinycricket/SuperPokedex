@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import PokeImage from './PokeImage';
 
-export default (props)=>{
-  var fontstyle = {
+const EvoChain = (props) => {
+  const fontstyle = {
     color:props.typecolor
   };
 
-  var bgstyle = {
+  const bgstyle = {
     backgroundColor:props.typecolor,
     color: "white"
   }
@@ -120,7 +121,7 @@ export default (props)=>{
     return imageArray;
   }
 
-  var evoArray = sortEvoChainData(props.evoData.chain);
+  const evoArray = sortEvoChainData(props.evoData.chain);
 
   return(
     <div className="EvoChain">
@@ -129,5 +130,13 @@ export default (props)=>{
         <div style={bgstyle} className="EvoChain__decoration-line"></div>
       </div>
       <div className="EvoChain__tree">{renderEvoChain(evoArray)}</div>
-    </div>);
+    </div>
+  );
 }
+
+EvoChain.propTypes = {
+  typecolor: PropTypes.string.isRequired,
+  evoData: PropTypes.object.isRequired
+}
+
+export default EvoChain;

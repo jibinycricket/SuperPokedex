@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {changeSpinnerState} from '../actions/index';
@@ -9,6 +10,13 @@ import EvoChain from '../components/EvoChain';
 import {typeColors} from '../scripts/helpers';
 
 class PokemonContainer extends Component{
+  static propTypes = {
+    actions: PropTypes.shape({
+      changeSpinnerState: PropTypes.func.isRequired,
+      pokeData: PropTypes.array.isRequired,
+      spinner: PropTypes.bool.isRequired
+    })
+  }
   constructor(props){
     super(props);
     this.state = {
@@ -22,7 +30,6 @@ class PokemonContainer extends Component{
   componentWillReceiveProps(nextProps){
     //If the next set of data is loaded, stop spinner
     if(nextProps.pokeData.length>0){
-      console.log('hello');
       if(this.state.generalData.name!==nextProps.pokeData[0][0].data.name){
         this.props.changeSpinnerState(false);
       }
@@ -46,11 +53,16 @@ class PokemonContainer extends Component{
       let spinnerStatus = this.props.spinner ? 'loading' : 'idle';
       return (
         <div className={`Spinner Spinner--${spinnerStatus}`}>
-          <img className="Spinner__image" src={require(`../images/pokeballspinner.png`)} width="150px" alt="pokeballspinner"/>
+          <img
+            className="Spinner__image"
+            src={require(`../images/pokeballspinner.png`)}
+            width="150px"
+            alt="pokeballspinner"
+          />
         </div>
       )
     }else{
-      var style={
+      const style = {
         backgroundColor:this.state.typeColor
       }
       return(
@@ -61,10 +73,10 @@ class PokemonContainer extends Component{
             style = {style}
           />
           <div className="Stats">
-            <TypeRelations typecolor={this.state.typeColor} generalData={this.state.generalData}/>
-            <StatChart typecolor={this.state.typeColor} statsData={this.state.generalData.stats.reverse()}/>
+            <TypeRelations typecolor={this.state.typeColor} generalData={this.state.generalData} />
+            <StatChart typecolor={this.state.typeColor} statsData={this.state.generalData.stats.reverse()} />
           </div>
-          <EvoChain typecolor={this.state.typeColor} evoData={this.state.evoData}/>
+          <EvoChain typecolor={this.state.typeColor} evoData={this.state.evoData} />
         </div>
       );
     }

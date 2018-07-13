@@ -1,6 +1,7 @@
 @import url(./base/normalize.css);
 body {
-  background-color: #5498BB; }
+  background-color: #5498BB;
+  font-family: sans-serif; }
 
 h1, h2, h3, h4, h5 {
   margin: 0; }
@@ -24,8 +25,7 @@ h1, h2, h3, h4, h5 {
     transform: rotate(360deg); } }
 
 .Spinner {
-  margin: 0 auto;
-  margin-top: 10px;
+  margin: 10px auto;
   text-align: center; }
   .Spinner--loading {
     animation-name: spin;
@@ -72,11 +72,18 @@ h1, h2, h3, h4, h5 {
   padding-right: 25px; }
 
 .BioStat {
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
   .BioStat__value {
+    display: block;
+    width: 100%;
     font-weight: 600;
     font-size: 16px; }
   .BioStat__label {
+    display: block;
+    width: 100%;
     font-weight: 400;
     font-size: 12px; }
   .BioStat:nth-child(2) {

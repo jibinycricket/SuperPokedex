@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default (props)=>{
+const BioStat = (props)=>{
   return(
     <div className="BioStat">
       <div className="BioStat__value">{props.main}</div>
@@ -8,3 +9,10 @@ export default (props)=>{
     </div>
   );
 }
+
+BioStat.propTypes = {
+  main: PropTypes.string.isRequired,
+  sub: PropTypes.string.isRequired
+}
+
+export default BioStat;

@@ -1,9 +1,16 @@
 .BioStat {
-  flex: 1; }
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; }
   .BioStat__value {
+    display: block;
+    width: 100%;
     font-weight: 600;
     font-size: 16px; }
   .BioStat__label {
+    display: block;
+    width: 100%;
     font-weight: 400;
     font-size: 12px; }
   .BioStat:nth-child(2) {

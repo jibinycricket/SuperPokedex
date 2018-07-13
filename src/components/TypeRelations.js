@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TypeRelation from './TypeRelation';
 import {typeWeakness, typeResistance, typeImmunity, typeAbbreviation} from '../scripts/helpers.js';
 /*
@@ -8,8 +9,7 @@ to other pokemon types.
 
 Passes all relational element data to the TypeRelation component which renders the different elements with its relation label
 */
-export default (props)=>{
-  
+const TypeRelations = (props)=>{  
   function getTypes(data){
     //Retrieves the element types of the pokemon and returns it in an array
     var pokeTypes = [];
@@ -47,9 +47,7 @@ export default (props)=>{
   }
 
   function renderMainType(data){
-    var style = {
-      backgroundColor: props.typecolor
-    };
+    var style = { backgroundColor: props.typecolor };
     return (
       <div style={style} className="MainType">
         <div className="MainType__value">{getTypeName(data)}</div>
@@ -68,3 +66,9 @@ export default (props)=>{
   ) 
 }
 
+TypeRelations.propTypes = {
+  generalData: PropTypes.object.isRequired,
+  typecolor: PropTypes.string.isRequired
+}
+
+export default TypeRelations;

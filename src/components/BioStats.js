@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BioStat from './BioStat';
 import PokeImage from './PokeImage';
 /*--BioStats--
 Contains BioStat component that renders species, height, weight after values are converted into Imperial units
 */
-export default (props)=>{
+const BioStats = (props) => {
   function convertHeightToFeet(meters){
     const raw_height = meters*.1*3.28084;
     var feet = Math.floor(raw_height);
@@ -64,3 +65,11 @@ export default (props)=>{
     </div>
   );
 }
+
+BioStats.propTypes = {
+  generalData: PropTypes.object.isRequired,
+  bioData: PropTypes.object.isRequired,
+  style: PropTypes.object.isRequired
+}
+
+export default BioStats;

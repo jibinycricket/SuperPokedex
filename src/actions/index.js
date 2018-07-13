@@ -15,7 +15,8 @@ export function fetchPokeData(number){
     });
   }
 
-  var request = axios.all([getPokeData(number),getDescriptionData(number)]).then(axios.spread((poke,species)=>{
+  var request = axios.all([getPokeData(number), getDescriptionData(number)])
+  .then(axios.spread((poke,species) => {
     return [poke, species];
   }));
 

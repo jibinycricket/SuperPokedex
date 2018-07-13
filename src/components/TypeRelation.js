@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {relationColors} from '../scripts/helpers';
 
-export default (props)=>{
+const TypeRelation = (props)=>{
   /*
   --TypeRelation Component--
   Renders Relational Set of Elements
@@ -30,3 +31,10 @@ export default (props)=>{
     return null
   }
 }
+
+TypeRelation.propTypes = {
+  elements:PropTypes.array.isRequired,
+  label: PropTypes.string.isRequired
+}
+
+export default TypeRelation;
