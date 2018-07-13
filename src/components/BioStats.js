@@ -1,6 +1,6 @@
 import React from 'react';
-import BioStat from './biostat';
-import PokeImage from './pokeimage';
+import BioStat from './BioStat';
+import PokeImage from './PokeImage';
 /*--BioStats--
 Contains BioStat component that renders species, height, weight after values are converted into Imperial units
 */
@@ -47,14 +47,14 @@ export default (props)=>{
       <h1 className="Bio__name" style={props.style}>{(props.generalData.name).toUpperCase()}</h1>
       <div className="Bio__info-container">
         <div className="Bio__image-container">
-          <PokeImage idNum={props.generalData.id} name={props.generalData.name}/>
+          <PokeImage idNum={props.generalData.id} name={props.generalData.name} />
           <div className="Bio__number">{addZerosToId(props.generalData.id)}</div>
         </div>
         <div className="Bio__text-container">
           <div className="Bio__stats">
-            <BioStat main={props.bioData.genera[2].genus.toUpperCase()} sub="SPECIES"/>
-            <BioStat main={convertHeightToFeet(props.generalData.height)} sub="HEIGHT"/>
-            <BioStat main={convertWeightToLbs(props.generalData.weight)} sub="WEIGHT"/>
+            <BioStat main={props.bioData.genera[2].genus.toUpperCase()} sub="SPECIES" />
+            <BioStat main={convertHeightToFeet(props.generalData.height)} sub="HEIGHT" />
+            <BioStat main={convertWeightToLbs(props.generalData.weight)} sub="WEIGHT" />
           </div>
           <div className="Bio__fun-fact">
             {englishFlavorText()}

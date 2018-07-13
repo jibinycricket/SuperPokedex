@@ -2,10 +2,10 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {changeSpinnerState} from '../actions/index';
-import Bio from '../components/biostats';
-import TypeRelations from '../components/typerelations';
-import Chart from '../components/statchart';
-import EvoChain from '../components/evochain';
+import BioStats from '../components/BioStats';
+import TypeRelations from '../components/TypeRelations';
+import StatChart from '../components/StatChart';
+import EvoChain from '../components/EvoChain';
 import {typeColors} from '../scripts/helpers';
 
 class PokemonContainer extends Component{
@@ -55,14 +55,14 @@ class PokemonContainer extends Component{
       }
       return(
         <div>
-          <Bio 
+          <BioStats 
             generalData={this.state.generalData} 
             bioData={this.state.bioData}
             style = {style}
           />
           <div className="Stats">
             <TypeRelations typecolor={this.state.typeColor} generalData={this.state.generalData}/>
-            <Chart typecolor={this.state.typeColor} statsData={this.state.generalData.stats.reverse()}/>
+            <StatChart typecolor={this.state.typeColor} statsData={this.state.generalData.stats.reverse()}/>
           </div>
           <EvoChain typecolor={this.state.typeColor} evoData={this.state.evoData}/>
         </div>

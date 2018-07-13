@@ -1,5 +1,5 @@
 import React from 'react';
-import PokeImage from './pokeimage';
+import PokeImage from './PokeImage';
 
 export default (props)=>{
   var fontstyle = {

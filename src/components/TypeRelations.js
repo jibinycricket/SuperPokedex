@@ -1,5 +1,5 @@
 import React from 'react';
-import TypeRelation from './typerelation';
+import TypeRelation from './TypeRelation';
 import {typeWeakness, typeResistance, typeImmunity, typeAbbreviation} from '../scripts/helpers.js';
 /*
 --Type Relations Component--
@@ -61,9 +61,9 @@ export default (props)=>{
   return(
     <div className="TypeRelations">
       {renderMainType(props.generalData.types)}
-      <TypeRelation elements={typeRelationElements(props.generalData.types, typeWeakness)} label="WEAKNESS"/>
-      <TypeRelation elements={typeRelationElements(props.generalData.types, typeResistance)} label="RESISTANCE"/>
-      <TypeRelation elements={typeRelationElements(props.generalData.types, typeImmunity)} label="IMMUNITY"/>
+      <TypeRelation elements={typeRelationElements(props.generalData.types, typeWeakness)} label="WEAKNESS" />
+      <TypeRelation elements={typeRelationElements(props.generalData.types, typeResistance)} label="RESISTANCE" />
+      <TypeRelation elements={typeRelationElements(props.generalData.types, typeImmunity)} label="IMMUNITY" />
     </div>
   ) 
 }
