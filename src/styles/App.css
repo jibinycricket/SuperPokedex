@@ -1,0 +1,154 @@
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+.load-spinner {
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center; }
+  .load-spinner #pokemon-spinner {
+    animation-name: spin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; }
+
+.dropdown-menu-container {
+  padding: 30px 0;
+  background-color: #e41f25;
+  text-align: center; }
+  .dropdown-menu-container #dropdown-menu {
+    background-color: white;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: none; }
+
+body {
+  background-color: #5498BB; }
+
+.App {
+  border: 3px solid #5D686B;
+  color: #5D686B;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white; }
+  .App .pokemon-name {
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 800;
+    padding: 20px; }
+
+.bio {
+  margin: 30px 0px; }
+  .bio .img-column {
+    vertical-align: top;
+    text-align: center;
+    box-sizing: border-box;
+    width: 30%;
+    display: inline-block; }
+  .bio .text-column {
+    width: 70%;
+    box-sizing: border-box;
+    display: inline-block; }
+    .bio .text-column .physical-stats {
+      display: flex;
+      text-align: center; }
+      .bio .text-column .physical-stats .physical-stat {
+        flex: 1; }
+        .bio .text-column .physical-stats .physical-stat .main {
+          font-weight: 600;
+          font-size: 16px; }
+        .bio .text-column .physical-stats .physical-stat .sub {
+          font-weight: 400;
+          font-size: 12px; }
+        .bio .text-column .physical-stats .physical-stat:nth-child(2) {
+          border-right: 1px solid black;
+          border-left: 1px solid black; }
+    .bio .text-column .fun-fact {
+      margin-top: 20px;
+      padding-right: 25px; }
+
+.main-type {
+  margin-bottom: 10px;
+  max-width: 400px;
+  min-width: 95px;
+  padding: 10px;
+  display: inline-block;
+  border-radius: 30px 0px 0px 30px;
+  color: white; }
+  @media only screen and (min-width: 450px) {
+    .main-type {
+      min-width: 150px; } }
+  .main-type .type-name {
+    font-size: 16px;
+    font-weight: 800; }
+  .main-type .type-label {
+    font-size: 12px; }
+
+.stats-data {
+  margin: 0 auto; }
+  .stats-data .types-column {
+    display: inline-block;
+    width: 40%;
+    text-align: right;
+    box-sizing: border-box;
+    vertical-align: top; }
+    .stats-data .types-column .type-relation-set {
+      margin: 10px 10px 0px 0px; }
+      .stats-data .types-column .type-relation-set .element {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 42px;
+        padding: 10px 0px;
+        font-size: 8px;
+        text-align: center;
+        color: white; }
+        @media only screen and (min-width: 450px) {
+          .stats-data .types-column .type-relation-set .element {
+            width: 42px;
+            padding: 10px 0px;
+            font-size: 10px; } }
+      .stats-data .types-column .type-relation-set .label {
+        margin: 5px 0px; }
+  .stats-data .chart-column {
+    width: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 3px solid;
+    border-right: 0px; }
+    @media only screen and (min-width: 450px) {
+      .stats-data .chart-column {
+        width: 60%; } }
+
+.evo-chain-container .evo-chain-section-title {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  font-size: 16px;
+  position: relative;
+  top: 20px;
+  padding: 10px 0px; }
+.evo-chain-container .evo-chain-thin-line {
+  height: 2px; }
+.evo-chain-container .evo-chain {
+  text-align: center;
+  margin-top: 30px; }
+  .evo-chain-container .evo-chain .poke-img {
+    display: inline-block; }
+  .evo-chain-container .evo-chain .poke-req {
+    display: inline-block;
+    vertical-align: top; }
+    .evo-chain-container .evo-chain .poke-req .evolve-level {
+      font-weight: 800;
+      padding-top: 40px; }
+      .evo-chain-container .evo-chain .poke-req .evolve-level .lvl-label {
+        font-size: 10px; }
+      .evo-chain-container .evo-chain .poke-req .evolve-level .evolved-label {
+        font-size: 16px; }
+    .evo-chain-container .evo-chain .poke-req .req-sprite {
+      padding-top: 40px; }
+    .evo-chain-container .evo-chain .poke-req .req-s-sprite {
+      padding-top: 10px; }
+
+/*# sourceMappingURL=App.css.map */
